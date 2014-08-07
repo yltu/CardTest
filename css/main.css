@@ -1,0 +1,57 @@
+body{
+	background:PapayaWhip;
+	//autoflow:hidden;
+}
+
+#mainDesk{
+
+	top:200px;
+
+	position:absolute;
+	background:Azure;
+}
+
+#getCard{
+	height:50px;
+	width:50px;
+	background:Cyan;
+	position:absolute;
+	right:10px;
+	bottom:10px;
+}
+
+#getCard:hover{
+	background:DarkCyan;
+	height:60px;
+	width:60px;
+}
+
+#myPart{
+	position:absolute;
+	bottom:30px;
+	left:100px;
+	height:150px;
+	width:700px;
+	border:1px solid;
+}
+
+.myCard{
+
+	float:left;
+	position:relative;
+	width:50px;
+	height:100px;
+	border:1px solid;
+	margin-top:20px;
+	margin-left:20px;
+
+
+}
+
+.myCard:hover{
+	margin-top:-10px;
+}
+.ui-state-hover{
+	background:blue;
+	opacity:0.5;
+}
