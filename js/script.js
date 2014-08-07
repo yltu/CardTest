@@ -8,10 +8,11 @@ function point(x,y,r){
 	this.y = y;
 	this.r = r;
 }
-function Card(id,x,y){
+function Card(id,x,y,status){
 	this.id=id;
 	this.x=x;
 	this.y=y;
+	this.status = status; //0:myCard,1:fightCard,2:dieCard
 }
 
 function showCard(){
@@ -26,6 +27,7 @@ function showCard(){
 				$newCard.html(cardList[key].id);
 				$newCard.draggable({ revert: "invalid" });
 				$("#myPart").append($newCard);
+				$("#allPart").append($newCard);
 			}
 		}
 	}
@@ -40,23 +42,29 @@ $(function(){
 		});
 	});
 	$("#getCard").click(function(){
-		cardList.push(new Card(i++,0,0));
+		cardList.push(new Card(i++,0,0,0));
 		showCard();
 	})
 
 	$("#mainDesk").droppable({
 		hoverClass: "ui-state-hover",
 		drop: function( event, ui ) {
-		var $newPosX = ui.offset.left - $(this).offset().left;
-		var $newPosY = ui.offset.top - $(this).offset().top;
-			//alert($newPosX+","+$newPosY);
-
-        	for(var key in cardList){
+			for(var key in cardList){
 				if(cardList[key]!=undefined && cardList[key].id==ui.draggable.attr("id")){
+					
+					var thisFightCard = cardList[key];
+					thisFightCard.status = 1;
+					fightList.push(thisFightCard);
 					cardList.splice(key,1);
 				}
 			}
-			fightList.push(ui.draggable);
+
+			var $newPosX = ui.offset.left - $(this).offset().left;
+			var $newPosY = ui.offset.top - $(this).offset().top;
+			//alert($newPosX+","+$newPosY);
+
+        	
+			
 			
 
 			ui.draggable.css("zoom","1.5");
@@ -83,16 +91,21 @@ $(function(){
 						radius: 20,
 						draggable:true,
 						click:function(layer){
-							//alert(layer.id);
+							alert(layer.id);
 							tmpid=layer.id.substring(1);
 							$("#"+tmpid).show();
 							$("#"+tmpid).click(function(){
 								$(this).hide();
-							})
+							});
+							//$("#mainDesk").append($("#"+tmpid));
+							//$("#"+tmpid).removeClass("myCard").addClass("fightCard");
+							//$("#"+tmpid).draggable("disable");
 						}
 					});
 				}
 			});
+
+
 
 			//ui.draggable.hide();
 			//showCard();  
