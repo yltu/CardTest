@@ -1,5 +1,6 @@
 body{
 	background:PapayaWhip;
+	overflow:hidden;
 }
 
 #mainDesk{
@@ -11,6 +12,9 @@ body{
 .com{	
 	background:transparent;
 	border:1px solid;
+	position:absolute;
+	top:0px;
+	left:0px;
 }
 
 #getCard{
@@ -67,7 +71,26 @@ body{
 	bottom:10px;
 	left:10px;
 	border:1px solid;
+	color:green;
+
 }
-#dieHover{
-	background:red;
+.ui-state-active{
+	background:yellow;
+}
+
+.handCard{
+	width: 140px;
+	height: 140px;
+	background:transparent;
+	border:1px solid;
+	margin-top:4px;
+	margin-left:4px;
+}
+#myPart, #myPart > :not(.dragging) {
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out; 
+}
+#myPart .dragging {
+	z-index: 800; 
 }
