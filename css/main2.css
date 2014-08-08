@@ -1,0 +1,73 @@
+body{
+	background:PapayaWhip;
+}
+
+#mainDesk{
+	top:100px;
+	position:absolute;
+	background:Azure;
+}
+
+.com{	
+	background:transparent;
+	border:1px solid;
+}
+
+#getCard{
+	height:50px;
+	width:50px;
+	background:Cyan;
+	position:absolute;
+	right:10px;
+	bottom:10px;
+}
+
+#getCard:hover{
+	background:DarkCyan;
+	height:60px;
+	width:60px;
+}
+
+#myPart{
+	position:absolute;
+	bottom:30px;
+	left:150px;
+	height:150px;
+	width:700px;
+	border:1px solid;
+}
+ 
+#comFightPart div{
+	cursor:pointer;
+}
+#comFightPart, #comFightPart > :not(.dragging) {
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out; 
+}
+#comFightPart .dragging {
+	z-index: 800; 
+}
+#comFightPart {
+	position: absolute;
+	top:120px;
+	width: 960px;
+}
+.brick.small {
+	width: 140px;
+	height: 140px;
+	background:transparent;
+	border:1px solid;
+}
+
+#diePart{
+	position:absolute;
+	width:100px;
+	height:100px;
+	bottom:10px;
+	left:10px;
+	border:1px solid;
+}
+#dieHover{
+	background:red;
+}
