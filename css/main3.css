@@ -29,4 +29,15 @@
 
 .jack{
 	background:blue;
+	border:10px solid;
+}
+.ss-dragged-child{
+	border:20px solid;
+}
+canvas{
+	background:transparent;
+}
+.fightMap .ss-placeholder-child{
+	background: transparent;
+    border: 5px solid red;
 }
